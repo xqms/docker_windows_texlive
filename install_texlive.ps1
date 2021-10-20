@@ -8,7 +8,7 @@ Retry-Command -TimeoutInSecs 2 -Verbose -ScriptBlock {
 }
 
 # Install Software
-& C:\install-ts-windows.exe --profile=C:\texlive.profile
+& C:\install-tl-windows.exe --profile=C:\texlive.profile
 if($lastexitcode -ne '0')
 {
     throw "Failed to install TeXLive"
