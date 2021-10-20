@@ -1,0 +1,19 @@
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: "Build Docker image"
+      run: docker build -t xqms/windows_texlive .
+    - name: "Login to Docker"
+      if: ${{ github.ref == 'refs/heads/main' }}
+      uses: azure/docker-login@v1
+      with:
+        username: ${{ secrets.docker_username }}
+        password: ${{ secrets.docker_password }}
+    - name: "Push to Docker Hub"
+      if: ${{ github.ref == 'refs/heads/main' }}
+      run: docker push xqms/windows_texlive
