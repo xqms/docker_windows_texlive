@@ -28,7 +28,7 @@ Remove-Item $Installer -Force -Recurse
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 
 # Install additional packages
-& tlmgr install xstring preview adjustbox etexcmds catchfile ltxcmds infwarerr ifplatform pgfopts letltxmacro filemod
+& tlmgr install xstring preview adjustbox etexcmds catchfile ltxcmds infwarerr ifplatform pgfopts letltxmacro filemod collectbox ifoddpage varwidth
 if($lastexitcode -ne '0')
 {
     throw "Failed to install packages"
