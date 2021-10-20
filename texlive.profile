@@ -19,11 +19,8 @@ collection-wintools 1
 collection-xetex 1
 instopt_adjustpath 1
 instopt_adjustrepo 1
-instopt_desktop_integration 1
-instopt_file_assocs 1
 instopt_letter 0
 instopt_portable 0
-instopt_w32_multi_user 1
 instopt_write18_restricted 1
 tlpdbopt_autobackup 1
 tlpdbopt_backupdir tlpkg/backups
