@@ -9,11 +9,11 @@ jobs:
     - name: "Build Docker image"
       run: docker build -t xqms/windows_texlive .
     - name: "Login to Docker"
-      if: ${{ github.ref == 'refs/heads/main' }}
+      if: ${{ github.ref == 'refs/heads/master' }}
       uses: azure/docker-login@v1
       with:
         username: ${{ secrets.docker_username }}
         password: ${{ secrets.docker_password }}
     - name: "Push to Docker Hub"
-      if: ${{ github.ref == 'refs/heads/main' }}
+      if: ${{ github.ref == 'refs/heads/master' }}
       run: docker push xqms/windows_texlive
